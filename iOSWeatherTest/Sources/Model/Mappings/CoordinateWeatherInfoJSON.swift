@@ -9,6 +9,9 @@
 import Foundation
 
 struct CoordinateWeatherInfoJSON: Decodable {
-        
+    
+    let main: CoordinateWeatherMainInfoJSON
+    
+    let weather: [CoordinateWeatherDescriptionJSON]
+    
 }
-

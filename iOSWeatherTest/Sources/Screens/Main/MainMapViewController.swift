@@ -20,12 +20,20 @@ class MainMapViewController: UIViewController {
     @IBAction func doubleTapAction(_ sender: Any) {
         let location = doubleTapGestureRecogniser?.location(in: mapView)
 
-        _ = location.map {
+        _ = location.flatMap {
             self.mapView?.convert($0, toCoordinateFrom: self.mapView)
-        }.map() {  location in
-            self.performWithNavigationController(segue: showWeatherDetailsSegue) { (weatherDetailsViewController: UIViewController) in
-                
+        }.flatMap() {  coordinate in
+            self.perform(segue: showWeatherDetailsSegue) { (weatherDetailsViewController: WeatherInfoViewController) in
+                weatherDetailsViewController.coordinate = coordinate
             }
         }
     }
+}
+
+extension MainMapViewController: UIGestureRecognizerDelegate {
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
 }

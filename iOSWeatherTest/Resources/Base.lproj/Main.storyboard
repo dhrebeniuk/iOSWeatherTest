@@ -34,26 +34,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ygL-48-Q5K">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ygL-48-Q5K">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <gestureRecognizers/>
-                            </mapView>
-                            <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bch-F9-PJ1">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="eHD-Pk-SMW" appends="YES" id="aKa-I5-Tqs"/>
+                                    <outletCollection property="gestureRecognizers" destination="eHD-Pk-SMW" appends="YES" id="cJz-Wm-z5g"/>
                                 </connections>
-                            </view>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ygL-48-Q5K" firstAttribute="top" secondItem="K5B-d5-AG8" secondAttribute="top" id="AYu-Ty-kG5"/>
-                            <constraint firstItem="K5B-d5-AG8" firstAttribute="trailing" secondItem="bch-F9-PJ1" secondAttribute="trailing" id="UOv-Ow-cHI"/>
                             <constraint firstItem="K5B-d5-AG8" firstAttribute="bottom" secondItem="ygL-48-Q5K" secondAttribute="bottom" id="aCT-8l-eTi"/>
-                            <constraint firstItem="K5B-d5-AG8" firstAttribute="bottom" secondItem="bch-F9-PJ1" secondAttribute="bottom" id="bQC-Ax-zHd"/>
-                            <constraint firstItem="bch-F9-PJ1" firstAttribute="top" secondItem="K5B-d5-AG8" secondAttribute="top" id="beM-fl-Jjs"/>
-                            <constraint firstItem="bch-F9-PJ1" firstAttribute="leading" secondItem="K5B-d5-AG8" secondAttribute="leading" id="heE-PI-gWw"/>
                             <constraint firstItem="K5B-d5-AG8" firstAttribute="trailing" secondItem="ygL-48-Q5K" secondAttribute="trailing" id="lR7-9D-cZf"/>
                             <constraint firstItem="ygL-48-Q5K" firstAttribute="leading" secondItem="K5B-d5-AG8" secondAttribute="leading" id="nF4-9w-kcb"/>
                         </constraints>
@@ -67,18 +59,19 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GQb-qY-ScK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer cancelsTouchesInView="NO" delaysTouchesEnded="NO" numberOfTapsRequired="2" id="eHD-Pk-SMW">
+                <tapGestureRecognizer delaysTouchesBegan="YES" numberOfTapsRequired="2" id="eHD-Pk-SMW">
                     <connections>
                         <action selector="doubleTapAction:" destination="1jL-qg-FdZ" id="NBh-gz-IpY"/>
+                        <outlet property="delegate" destination="1jL-qg-FdZ" id="vcn-1s-EPv"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-634.39999999999998" y="100.29985007496252"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Weather Info View Controller-->
         <scene sceneID="Z5H-Vr-s4C">
             <objects>
-                <tableViewController id="jXF-jO-QFj" sceneMemberID="viewController">
+                <tableViewController id="jXF-jO-QFj" customClass="WeatherInfoViewController" customModule="iOSWeatherTest" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="EeA-je-fv1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
