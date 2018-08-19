@@ -24,7 +24,16 @@ class WeatherInfoViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        coordinate.map() { weatherInfoManager.loadInfo(coordinate: $0) }
+        coordinate.map() { weatherInfoManager.loadInfo(coordinate: $0) { [weak self] weatherInfo, error in
+            
+            weatherInfo.map() { self?.updateUI(weatherItem: $0) }
+            
+            }
+        }
+    }
+    
+    private func updateUI(weatherItem: WeatherItem) {
+        
     }
 
 }

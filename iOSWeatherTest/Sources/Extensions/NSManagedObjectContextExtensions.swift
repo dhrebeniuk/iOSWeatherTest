@@ -27,6 +27,20 @@ extension NSManagedObjectContext {
 	}
 	
 	
+    /** Fetch request with keys and values */
+    func fetchRequest<T>(entityName entity: String, uniqueItems: [(key: String, value: NSObject)]) -> NSFetchRequest<T> {
+        let request = NSFetchRequest<T>(entityName: entity)
+        request.resultType = NSFetchRequestResultType()
+        
+        var predicates = [NSPredicate]()
+        for uniqueItem in uniqueItems {
+            predicates.append(NSPredicate(format: "\(uniqueItem.key) = %@", uniqueItem.value))
+        }
+        request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+        request.fetchLimit = 1
+
+        return request
+    }
 	
 	/** Fetch object with keys and values */
 	func fetchManagedObject(entityName entity: String, uniqueItems: [(key: String, value: NSObject)]) throws -> NSManagedObject? {

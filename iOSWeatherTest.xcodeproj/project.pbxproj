@@ -130,20 +130,20 @@
 		D97A2D9C2129E93300FA4D97 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D9AEA7DB2129EA8B008DB612 /* Mappings */,
+				D9AEA7DB2129EA8B008DB612 /* JSONMappings */,
 				D9AEA7D92129EA33008DB612 /* OpenWeatherClient.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		D9AEA7DB2129EA8B008DB612 /* Mappings */ = {
+		D9AEA7DB2129EA8B008DB612 /* JSONMappings */ = {
 			isa = PBXGroup;
 			children = (
 				D9AEA7DC2129EAE7008DB612 /* CoordinateWeatherInfoJSON.swift */,
 				D9AEA7EC2129F521008DB612 /* CoordinateWeatherMainInfoJSON.swift */,
 				D9AEA7EE2129F5C7008DB612 /* CoordinateWeatherDescriptionJSON.swift */,
 			);
-			path = Mappings;
+			path = JSONMappings;
 			sourceTree = "<group>";
 		};
 		D9AEA7DE2129EB05008DB612 /* Extensions */ = {

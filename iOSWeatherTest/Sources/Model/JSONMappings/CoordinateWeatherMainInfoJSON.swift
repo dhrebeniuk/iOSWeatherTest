@@ -10,7 +10,6 @@ import Foundation
 
 struct CoordinateWeatherMainInfoJSON: Decodable {
     
-    let grnd_level: Double
     let humidity: Double
 
     let pressure: Double
