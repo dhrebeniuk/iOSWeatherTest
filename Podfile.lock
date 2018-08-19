@@ -1,3 +1,25 @@
-PODFILE CHECKSUM: 02618c9d3b9abd2c9d2a248bc5a38a8243525930
+PODS:
+  - Alamofire (4.5.1)
+  - AlamofireNetworkActivityIndicator (2.2.0):
+    - Alamofire (~> 4.5)
+  - SegueWithCompletion (0.1.6)
+
+DEPENDENCIES:
+  - Alamofire (~> 4.5.1)
+  - AlamofireNetworkActivityIndicator (~> 2.2.0)
+  - SegueWithCompletion
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - AlamofireNetworkActivityIndicator
+    - SegueWithCompletion
+
+SPEC CHECKSUMS:
+  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  AlamofireNetworkActivityIndicator: 81e1630e7cfed22a4e4e82a174c59e651dc4f8ca
+  SegueWithCompletion: e18763a8c4b99e18fa9b0e2239b8fd71e7d52c5a
+
+PODFILE CHECKSUM: f13b14bfdf15ab9ddb9b15ea54430384f4d92506
 
 COCOAPODS: 1.5.3

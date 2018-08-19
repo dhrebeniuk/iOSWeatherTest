@@ -13,6 +13,9 @@
 		D97A2D8E2129E7AA00FA4D97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D97A2D8C2129E7AA00FA4D97 /* Main.storyboard */; };
 		D97A2D902129E7AD00FA4D97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D97A2D8F2129E7AD00FA4D97 /* Assets.xcassets */; };
 		D97A2D932129E7AD00FA4D97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D97A2D912129E7AD00FA4D97 /* LaunchScreen.storyboard */; };
+		D9AEA7DA2129EA33008DB612 /* OpenWeatherClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEA7D92129EA33008DB612 /* OpenWeatherClient.swift */; };
+		D9AEA7DD2129EAE7008DB612 /* CoordinateWeatherInfoJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEA7DC2129EAE7008DB612 /* CoordinateWeatherInfoJSON.swift */; };
+		D9AEA7E12129EB28008DB612 /* NSManagedObjectContextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEA7E02129EB28008DB612 /* NSManagedObjectContextExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		D97A2D8F2129E7AD00FA4D97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D97A2D922129E7AD00FA4D97 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D97A2D942129E7AD00FA4D97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D9AEA7D92129EA33008DB612 /* OpenWeatherClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherClient.swift; sourceTree = "<group>"; };
+		D9AEA7DC2129EAE7008DB612 /* CoordinateWeatherInfoJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateWeatherInfoJSON.swift; sourceTree = "<group>"; };
+		D9AEA7E02129EB28008DB612 /* NSManagedObjectContextExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtensions.swift; sourceTree = "<group>"; };
 		EE7EC1DE682B7016FE6E60CE /* Pods-iOSWeatherTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSWeatherTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSWeatherTest/Pods-iOSWeatherTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -87,8 +93,10 @@
 		D97A2D9A2129E84800FA4D97 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				D9AEA7DF2129EB14008DB612 /* Screens */,
+				D9AEA7DE2129EB05008DB612 /* Extensions */,
+				D97A2D9C2129E93300FA4D97 /* Model */,
 				D97A2D882129E7AA00FA4D97 /* AppDelegate.swift */,
-				D97A2D8A2129E7AA00FA4D97 /* ViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -104,6 +112,39 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		D97A2D9C2129E93300FA4D97 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D9AEA7DB2129EA8B008DB612 /* Mappings */,
+				D9AEA7D92129EA33008DB612 /* OpenWeatherClient.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D9AEA7DB2129EA8B008DB612 /* Mappings */ = {
+			isa = PBXGroup;
+			children = (
+				D9AEA7DC2129EAE7008DB612 /* CoordinateWeatherInfoJSON.swift */,
+			);
+			path = Mappings;
+			sourceTree = "<group>";
+		};
+		D9AEA7DE2129EB05008DB612 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D9AEA7E02129EB28008DB612 /* NSManagedObjectContextExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D9AEA7DF2129EB14008DB612 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D97A2D8A2129E7AA00FA4D97 /* ViewController.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -115,6 +156,7 @@
 				D97A2D812129E7AA00FA4D97 /* Sources */,
 				D97A2D822129E7AA00FA4D97 /* Frameworks */,
 				D97A2D832129E7AA00FA4D97 /* Resources */,
+				4A99B3FFD0D5896980366253 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -190,6 +232,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		4A99B3FFD0D5896980366253 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iOSWeatherTest/Pods-iOSWeatherTest-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework",
+				"${BUILT_PRODUCTS_DIR}/SegueWithCompletion/SegueWithCompletion.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireNetworkActivityIndicator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SegueWithCompletion.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iOSWeatherTest/Pods-iOSWeatherTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -197,8 +261,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9AEA7DD2129EAE7008DB612 /* CoordinateWeatherInfoJSON.swift in Sources */,
+				D9AEA7DA2129EA33008DB612 /* OpenWeatherClient.swift in Sources */,
 				D97A2D8B2129E7AA00FA4D97 /* ViewController.swift in Sources */,
 				D97A2D892129E7AA00FA4D97 /* AppDelegate.swift in Sources */,
+				D9AEA7E12129EB28008DB612 /* NSManagedObjectContextExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
