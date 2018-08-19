@@ -16,6 +16,8 @@
 		D9AEA7DA2129EA33008DB612 /* OpenWeatherClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEA7D92129EA33008DB612 /* OpenWeatherClient.swift */; };
 		D9AEA7DD2129EAE7008DB612 /* CoordinateWeatherInfoJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEA7DC2129EAE7008DB612 /* CoordinateWeatherInfoJSON.swift */; };
 		D9AEA7E12129EB28008DB612 /* NSManagedObjectContextExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEA7E02129EB28008DB612 /* NSManagedObjectContextExtensions.swift */; };
+		D9AEA7E42129EC51008DB612 /* MainMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AEA7E32129EC51008DB612 /* MainMapViewController.swift */; };
+		D9AEA7E62129EC8B008DB612 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9AEA7E52129EC8B008DB612 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		D9AEA7D92129EA33008DB612 /* OpenWeatherClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherClient.swift; sourceTree = "<group>"; };
 		D9AEA7DC2129EAE7008DB612 /* CoordinateWeatherInfoJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateWeatherInfoJSON.swift; sourceTree = "<group>"; };
 		D9AEA7E02129EB28008DB612 /* NSManagedObjectContextExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObjectContextExtensions.swift; sourceTree = "<group>"; };
+		D9AEA7E32129EC51008DB612 /* MainMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMapViewController.swift; sourceTree = "<group>"; };
+		D9AEA7E52129EC8B008DB612 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		EE7EC1DE682B7016FE6E60CE /* Pods-iOSWeatherTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSWeatherTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSWeatherTest/Pods-iOSWeatherTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -39,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9AEA7E62129EC8B008DB612 /* MapKit.framework in Frameworks */,
 				66FF24150293F8B64DE875A2 /* Pods_iOSWeatherTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,6 +54,7 @@
 		73E882A79B5A153D1790A2BF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9AEA7E52129EC8B008DB612 /* MapKit.framework */,
 				3DB81DA811BF8F9A1BA08EBF /* Pods_iOSWeatherTest.framework */,
 			);
 			name = Frameworks;
@@ -140,9 +146,18 @@
 		D9AEA7DF2129EB14008DB612 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				D9AEA7E22129EBA8008DB612 /* Main */,
 				D97A2D8A2129E7AA00FA4D97 /* ViewController.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		D9AEA7E22129EBA8008DB612 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				D9AEA7E32129EC51008DB612 /* MainMapViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +194,11 @@
 				TargetAttributes = {
 					D97A2D842129E7AA00FA4D97 = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -261,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9AEA7E42129EC51008DB612 /* MainMapViewController.swift in Sources */,
 				D9AEA7DD2129EAE7008DB612 /* CoordinateWeatherInfoJSON.swift in Sources */,
 				D9AEA7DA2129EA33008DB612 /* OpenWeatherClient.swift in Sources */,
 				D97A2D8B2129E7AA00FA4D97 /* ViewController.swift in Sources */,
