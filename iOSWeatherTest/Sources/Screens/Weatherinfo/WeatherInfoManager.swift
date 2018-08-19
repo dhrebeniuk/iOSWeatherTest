@@ -69,7 +69,7 @@ class WeatherInfoManager {
                     weatherItem = NSEntityDescription.insertNewObject(forEntityName: $0, into:managedContext) as? WeatherItem
                 }
                 
-                weatherItem?.weatherDetails = weatherInfo.weather.description
+                weatherItem?.weatherDetails = weatherInfo.weather.first?.description
                 weatherItem?.humidity = weatherInfo.main.humidity
                 weatherItem?.temperature = weatherInfo.main.temp
                 weatherItem?.pressure = weatherInfo.main.pressure

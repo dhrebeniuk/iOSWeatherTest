@@ -11,6 +11,11 @@ import CoreLocation
 
 class WeatherInfoViewController: UITableViewController {
 
+    @IBOutlet private weak var coordinateLabel: UILabel?
+    @IBOutlet private weak var humidityLabel: UILabel?
+    @IBOutlet private weak var temperatureLabel: UILabel?
+    @IBOutlet private weak var weatherDescriptionLabel: UILabel?
+    
     var coordinate: CLLocationCoordinate2D?
 
     var weatherInfoManager = WeatherInfoManager()
@@ -33,7 +38,15 @@ class WeatherInfoViewController: UITableViewController {
     }
     
     private func updateUI(weatherItem: WeatherItem) {
+        coordinateLabel?.text = "\(NSLocalizedString("Latitude", comment: "")): \(weatherItem.latitude)\n\(NSLocalizedString("Longtitude", comment: "")): \(weatherItem.longitude)"
         
+        humidityLabel?.text = "\(NSLocalizedString("Humidity", comment: "")): \(weatherItem.humidity)"
+
+        temperatureLabel?.text = "\(NSLocalizedString("Temperature: ", comment: "")): \(weatherItem.temperature)"
+        
+        weatherDescriptionLabel?.text = weatherItem.weatherDetails ?? ""
+        
+        tableView.setNeedsDisplay()
     }
 
 }
