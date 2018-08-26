@@ -49,23 +49,25 @@ class WeatherInfoManager {
     }
     
     private func save(coordinate: CLLocationCoordinate2D, weatherInfo: CoordinateWeatherInfoJSON) {
-        _ = self.managedContext.flatMap() { managedContext -> NSManagedObjectContext in
-            let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-            context.parent = managedContext
-            return context
-        }.map() { managedContext in
-            WeatherItem.entity().name.map() {
-                var weatherItem: WeatherItem?
+        _ = self.managedContext
+            .flatMap() { managedContext -> NSManagedObjectContext in
+                let context = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+                context.parent = managedContext
+                return context
+            }
+            .map() { managedContext in
+                WeatherItem.entity().name.map() {
+                    var weatherItem: WeatherItem?
                     
-                do {
-                  weatherItem = try managedContext.fetchManagedObject(entityName: $0, uniqueItems: [(key: #keyPath(WeatherItem.longitude), value: NSNumber(value: coordinate.longitude)),
+                    do {
+                        weatherItem = try managedContext.fetchManagedObject(entityName: $0, uniqueItems: [(key: #keyPath(WeatherItem.longitude), value: NSNumber(value: coordinate.longitude)),
                     (key: #keyPath(WeatherItem.latitude), value: NSNumber(value: coordinate.latitude))]) as? WeatherItem
                 }
                 catch {
                     
                 }
                 
-                if (weatherItem == nil) {
+                if weatherItem == nil {
                     weatherItem = NSEntityDescription.insertNewObject(forEntityName: $0, into:managedContext) as? WeatherItem
                 }
                 
